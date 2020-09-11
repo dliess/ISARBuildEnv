@@ -1,0 +1,29 @@
+{
+    "name": "YoctoBuildEnv",
+    
+    "build": {
+      "dockerfile": "./Dockerfile",
+    },
+   "mounts": [
+      "type=bind,source=${env:HOME}/.ssh,target=/home/build-user/.ssh",
+      "type=bind,source=/etc/ssl/certs,target=/etc/ssl/certs",
+      "type=bind,source=/usr/share/ca-certificates,target=/usr/share/ca-certificates"
+   ],
+    "runArgs" : ["--privileged",
+    //             "--network", "host"
+    ],
+    "settings": { 
+       "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+       "eamodio.gitlens",
+       "eugenwiens.bitbake",
+       "ms-vscode.cpptools",
+       "twxs.cmake",
+       "ms-vscode.cmake-tools",
+       "jebbs.plantuml",
+       "plex.vscode-protolint",
+       "zxh404.vscode-proto3",
+       "xaver.clang-format"
+    ]
+ }
